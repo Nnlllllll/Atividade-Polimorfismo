@@ -1,13 +1,15 @@
-public class Empresa{    
+public class Empresa {    
     public static void main(String[] args) {
-        Funcionario v = new Vendedor(2000, 500); // Vendedor com salario base de 2000 e comissão de 500
-        Funcionario f= new FreeLancer(20, 150); // Freelancer com 20 dias trabalhados a 150 cada
+        Funcionario v = new Vendedor(2000, 500); // Vendedor
+        Funcionario f = new FreeLancer(20, 150); // Freelancer
+        Funcionario g = new Gerente(3000);       // Gerente
 
-    System.out.println("Salário do Vendedor:" + obterSalarioDoFuncionario(v)); // Chama Vendedor
-    System.out.println("Salário do Freelancer: " + obterSalarioDoFuncionario(f)); // Chama FreeLancer
+        System.out.println("Salário do Vendedor: " + obterSalarioDoFuncionario(v));
+        System.out.println("Salário do Freelancer: " + obterSalarioDoFuncionario(f));
+        System.out.println("Salário do Gerente: " + obterSalarioDoFuncionario(g)); // Novo exemplo de polimorfismo
     }
 
-    public static double obterSalarioDoFuncionario(Funcionario funcionario){
-    return funcionario.calcularSalarioFinal(); // Polimorfismo em açao
+    public static double obterSalarioDoFuncionario(Funcionario funcionario) {
+        return funcionario.calcularSalarioFinal(); // Polimorfismo em ação
     }
 }
